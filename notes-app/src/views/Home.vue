@@ -1,6 +1,7 @@
 <template>
 <!-- <v-app> -->
   <div id="app">
+    <h1 align="Center"> Current Posts</h1>
     <AddPost v-on:add-post="addPost"/>
     <Posts v-bind:posts="posts"  v-on:del-post="deletePost"/>
   </div>
@@ -9,7 +10,6 @@
 
 <script> 
 import Posts from "../components/Posts";
-
 import AddPost from '../components/AddPost';
 import axios from 'axios';
 

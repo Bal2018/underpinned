@@ -9,8 +9,8 @@
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-toolbar-title class="header"> -->
     <header class="header">
-    <img  src='../../../src/assets/UPLogo2.png' alt="UnderPinned Logo"  style="width: 200px">
-    <span class="center">Current Posts </span>
+        <img src='../../../src/assets/UPLogo2.png' alt="UnderPinned Logo"  style="width: 200px" >
+       
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -30,9 +30,10 @@
 </script>
 
 <style scoped>
+     
     .header { 
         background:  white;
-        text-align: center;
+        text-align: left;
         padding: 10px;
     }
     .header a {
