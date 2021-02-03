@@ -1,9 +1,9 @@
 <template>
     <div>
-        <form @submit="addPost">
+        <form @submit.prevent="addPost">
             <input type="text" v-model="title" name="title " placeholder="Post Title" >
             <input type="text" v-model="body" name="body" placeholder="Post Details" >
-            <input type="submit" value="submit" class="submitButton" >
+            <input type="submit" value="Submit" class="submitButton" >
         </form>
     </div>
 </template>

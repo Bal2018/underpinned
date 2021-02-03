@@ -1,12 +1,10 @@
 <template>
   <div class="post-item" >
      <p>
+       <input type="checkbox" v-on:change="editPost">
        {{post.title}}
        {{post.body}}
-       <button @click="$emit('del-post', post.id)"
-       class="del">
-       </button>
-       
+       <button @click="$emit('del-post', post.id)" class="del"></button>
       </p>
   </div>
 </template>
@@ -14,19 +12,21 @@
 <script>
 export default {
   name: 'PostItem',
-  props: ["post"]
-   
+  props: ["post"],
+  methods: {
+    editPost ( ){     //Need to add functionality here 
+    }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .post-item {
-    background:whitesmoke;
-    padding: 10px;
+    background:white;
+    padding: 20px;
     border-bottom: 1px wheat dotted;
   }
-
   .del {
     background: red;
     color: white;
