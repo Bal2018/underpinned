@@ -8,13 +8,14 @@
     <v-toolbar app dense>  
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-toolbar-title class="header"> -->
-    <header class="header">
-        <img src='../../../src/assets/UPLogo2.png' alt="UnderPinned Logo"  style="width: 200px" >
-       
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header class="header">    
+        <a href="/" >          
+            <img src='../../../src/assets/UPLogo2.png' alt="UnderPinned Logo"  class="h-38" style="width: 300px" >
+        </a>
+        <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+        </div>
     </header>
         <!-- </v-toolbar-title>
          <v-spacer></v-spacer>
@@ -30,7 +31,6 @@
 </script>
 
 <style scoped>
-     
     .header { 
         background:  white;
         text-align: left;

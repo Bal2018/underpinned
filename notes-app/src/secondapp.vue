@@ -1,27 +1,33 @@
 <template>
-<!-- <v-app> -->
+<v-app>
   <div id="app">
-    <h1> Current Posts</h1>
-    <AddPost v-on:add-post="addPost"/>
-    <Posts v-bind:posts="posts"  v-on:del-post="deletePost"/>
+    <Header />
+   
+    <AddPost v-on:add-post="AddPost"/>
+     <v-content>
+    <posts v-bind:posts="posts" v-on:del-post="deletePost"/>
+     </v-content>
   </div>
-  <!-- </v-app> -->
+  </v-app>
 </template>
 
 <script> 
-import Posts from "../components/Posts";
-import AddPost from '../components/AddPost';
+import Posts from "./components/Posts";
+import Header from "./components/layout/Header";
+import AddPost from './components/AddPost';
 import axios from 'axios';
-
 export default {
-  name: 'Home',
+  name: 'App',
   components: { 
     Posts,
+    Header,
     AddPost
   },
   data(){
     return {
-      posts: []
+      posts: [
+
+      ]
     }
   },
   methods: {
@@ -30,7 +36,7 @@ export default {
       .then(() => this.posts = this.posts.filter(post =>post.id !== id))
      .catch(err => console.log(err));
     },
-    addPost(newPost) {
+    AddPost(newPost) {
       const {title, body} = newPost;
       axios.post('https://jsonplaceholder.typicode.com/posts ', {title,body})
       .then(res => this.posts = [...this.posts, res.data])
@@ -39,7 +45,7 @@ export default {
   },
   created(){
     axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
-    // .then(res => res.json())  // was trying to make it translate data into English
+    // .then(res => res.json())
     .then(res => this.posts = res.data)
     .catch(err => console.log(err));
   }

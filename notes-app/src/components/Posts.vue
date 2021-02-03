@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import PostItem from "./PostItem";
-export default {
-  name: "Posts",
-  components: {
-    PostItem
-  },
-  props: ["posts"] 
-}
+  import PostItem from "./PostItem";
+  export default {
+    name: "Posts",
+    components: {
+      PostItem
+    },
+    props: ["posts"] 
+  }
 </script>
  
 <style> 

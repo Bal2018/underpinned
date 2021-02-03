@@ -8,6 +8,7 @@
     </div>
 </template>
 <script> 
+
 export default {
     name: "AddPost",
     data(){
@@ -34,10 +35,11 @@ export default {
 </script>
 
 <style scoped>
-    form { display: flex;}
+    form { display: flex; border-block-style: double ;  }
     input[type="text"]{
         flex : 10;
-        padding: 5px;
+        padding: 10px;
+        margin: 10px;
     }
     input[type="submit"]{
         flex : 2; 
