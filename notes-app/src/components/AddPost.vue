@@ -1,11 +1,18 @@
 <template>
+<v-container>
+    <v-row justify="space-around">
+
     <div>
         <form @submit.prevent="addPost">
             <input type="text" v-model="title" name="title " placeholder="Post Title" >
             <input type="text" v-model="body" name="body" placeholder="Post Details" >
-            <input type="submit" value="Submit" class="submitButton" >
+            <v-btn depressed color="orange" rounded large type="submit" value="Add Post"   class="submitButton"  >
+                Add Post
+            </v-btn>
         </form>
     </div>
+    </v-row>
+</v-container>
 </template>
 <script> 
 
@@ -22,12 +29,11 @@ export default {
                 title: this.title,
                 body: this.body
             }
-            // the above constructed the data we wanted, and now we need 
-            // to send this to the parent class using emit
-            if ((this.title) && (this.body)) {         //conditional emit if both field have been entered
+            
+            if ((this.title) && (this.body)) {          
                 this.$emit('add-post', newPost);
             }
-            this.title = '';            //blank title and body input fields
+            this.title = '';             
             this.body = '';
         }
     }

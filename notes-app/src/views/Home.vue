@@ -1,11 +1,9 @@
-<template>
-<!-- <v-app> -->
-  <div id="app">
-    <h1> Current Posts</h1>
+<template> 
+  <div class="home">
+    <h1 class="py-6 display-2 text-center justify-center"> Current Posts </h1>
     <AddPost v-on:add-post="addPost"/>
     <Posts v-bind:posts="posts"  v-on:del-post="deletePost"/>
-  </div>
-  <!-- </v-app> -->
+  </div> 
 </template>
 
 <script> 
@@ -39,7 +37,6 @@ export default {
   },
   created(){
     axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
-    // .then(res => res.json())  // was trying to make it translate data into English
     .then(res => this.posts = res.data)
     .catch(err => console.log(err));
   }
@@ -47,7 +44,7 @@ export default {
 </script>
 
 <style>
-  *{
+  /* *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -66,5 +63,5 @@ export default {
   }
   submitButton:hover {
     background: rebeccapurple;
-  }
+  } */
 </style>
